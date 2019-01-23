@@ -1,0 +1,16 @@
+<div class="sidebar" [ngClass]="{'menu-collapsed': isMenuCollapsed}" (mouseleave)="hoverElemTop=-200">
+    <ul class="nav nav-sidebar flex-column" perfectScrollbar>
+        <li *ngFor="let item of menuItems" class="sidebar-list-item">           
+          
+
+            <a *ngIf="item.routerLink && !item.subMenu && (item.role==roleType  || (item.role=='Analyst' && roleType == 'Admin'))" [routerLink]="[item.routerLink]" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" (click)="collapseMenu($event, item)" (mouseenter)="hoverItem($event, item)" class="sidebar-list-link">
+                <i class="fa {{ item.icon }}"></i><span>{{ item.title }}</span>
+            </a>
+       
+         
+
+
+        </li>
+    </ul>
+    <div class="sidebar-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}" [ngClass]="{'show-hover-elem': showHoverElem }"></div>
+</div>

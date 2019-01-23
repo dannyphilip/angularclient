@@ -1,0 +1,31 @@
+<kgs-navbar></kgs-navbar>
+<div class="container-fluid">         
+    <div class="row"> 
+        <kgs-menu></kgs-menu>
+ 
+        <div class="main-wrapper"  [ngClass]="{'menu-collapsed': isMenuCollapsed}"> 
+
+
+            <div class="main">
+                <kgs-breadcrumb></kgs-breadcrumb>
+                <router-outlet></router-outlet>
+            </div> 
+
+          
+
+
+            <footer class="footer text-center clearfix">
+                <div class="footer-main pull-left  clearfix">
+                    <div class="copyright pull-left">&copy; <a class="font-weight-bold" href="http://keoghs.co.uk">keoghs</a> 2019</div>
+              
+                </div>
+
+
+                
+            </footer>
+
+            <kgs-back-top position="200"></kgs-back-top>
+
+        </div>
+    </div>
+</div>

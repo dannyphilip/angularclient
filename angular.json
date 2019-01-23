@@ -1,0 +1,191 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "keoghs-framework": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ],
+            "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/socicon/css/socicon.css",
+              "node_modules/metrojs/release/MetroJs.Full/MetroJs.css",
+              "node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "node_modules/dragula/dist/dragula.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/flatpickr/dist/flatpickr.css",
+              "node_modules/angular-slickgrid/lib/multiple-select/multiple-select.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/ngx-select-dropdown/dist/assets/style.css",
+              "node_modules/@ng-select/ng-select/themes/default.theme.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui-dist/jquery-ui.min.js",
+              "node_modules/slickgrid/lib/jquery.event.drag-2.3.0.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/skycons/skycons.js",
+              "node_modules/jquery-knob/dist/jquery.knob.min.js",
+              "node_modules/d3/dist/d3.min.js",
+              "node_modules/topojson/dist/topojson.min.js",
+              "node_modules/datamaps/dist/datamaps.all.hires.min.js",
+              "node_modules/moment/moment.js",
+              "node_modules/fullcalendar/dist/fullcalendar.min.js",
+              "node_modules/dropzone/dist/dropzone.js",
+              "node_modules/froala-editor/js/froala_editor.pkgd.min.js",
+              "node_modules/angular-slickgrid/lib/multiple-select/multiple-select.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "keoghs-framework:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "keoghs-framework:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "keoghs-framework:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui-dist/jquery-ui.min.js",
+              "node_modules/slickgrid/lib/jquery.event.drag-2.3.0.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/skycons/skycons.js",
+              "node_modules/jquery-knob/dist/jquery.knob.min.js",
+              "node_modules/d3/dist/d3.min.js",
+              "node_modules/topojson/dist/topojson.min.js",
+              "node_modules/datamaps/dist/datamaps.all.hires.min.js",
+              "node_modules/moment/moment.js",
+              "node_modules/fullcalendar/dist/fullcalendar.min.js",
+              "node_modules/dropzone/dist/dropzone.js",
+              "node_modules/froala-editor/js/froala_editor.pkgd.min.js",
+              "node_modules/angular-slickgrid/lib/multiple-select/multiple-select.js"
+            ],
+            "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/socicon/css/socicon.css",
+              "node_modules/metrojs/release/MetroJs.Full/MetroJs.css",
+              "node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "node_modules/dragula/dist/dragula.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/flatpickr/dist/flatpickr.css",
+              "node_modules/angular-slickgrid/lib/multiple-select/multiple-select.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/ngx-select-dropdown/dist/assets/style.css",
+              "node_modules/@ng-select/ng-select/themes/default.theme.css",
+              "src/styles.scss"
+            ],
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "keoghs-framework-e2e": {
+      "root": "e2e",
+      "sourceRoot": "e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "keoghs-framework:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "keoghs-framework",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleext": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  }
+}
