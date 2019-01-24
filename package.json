@@ -5,12 +5,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --dev",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "copy": "xcopy \"dist\" \"..\\..\\tester\" /i /s /r /y /c",
-    "dist": "npm run build  && npm run copy"
+    "e2e": "ng e2e"
+    //"copy": "xcopy \"dist\" \"..\\..\\tester\" /i /s /r /y /c",
+    //"dist": "npm run build  && npm run copy"
   },
   "private": true,
   "dependencies": {
