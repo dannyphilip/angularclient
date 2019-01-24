@@ -281,6 +281,13 @@
     <Content Include="src\tsconfig.app.json" />
     <Content Include="src\tsconfig.spec.json" />
     <Content Include="src\app\pages\administration\admin.component.scss" />
+    <Content Include="src\Web.config" />
+    <None Include="src\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="src\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\app\Helpers\" />
